@@ -1,0 +1,9 @@
+<nav class="navbar">
+  @for (item of menuItems; track item) {
+    <button 
+      [class.active]="activeTab === item" 
+      (click)="setActive(item)">
+      {{ item }}
+    </button>
+  }
+</nav>

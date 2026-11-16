@@ -1,0 +1,16 @@
+.inputs-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+input {
+  padding: 4px 8px;
+  border: 1px solid #9ca3af;
+  border-radius: 3px;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0;
+}

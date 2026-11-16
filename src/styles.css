@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #f9fafb;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: white;
+  margin: 16px auto;
+  padding: 24px;
+  max-width: 1100px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.profile-card { border-left: 4px solid #2563eb; }
+.friends-card { border-left: 4px solid #10b981; }
+
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.blue-bg { background-color: #e0e7ff; }
+.green-bg { background-color: #d1fae5; }
+
+h2 {
+  color: #1e3a8a;
+  margin-top: 0;
+}

@@ -1,0 +1,19 @@
+<section class="card friends-card">
+  <div class="icon-circle green-bg">👥</div>
+  <div class="content">
+    <h2>Liste des amis</h2>
+    
+    <!-- Two-way data binding demonstration -->
+    <div class="inputs-row">
+      <input type="text" [(ngModel)]="friendSearchName" />
+      <input type="text" [(ngModel)]="friendSearchName" />
+      <input type="text" [(ngModel)]="friendSearchName" />
+    </div>
+
+    <ul>
+      @for (friend of friends; track friend) {
+        <li>{{ friend }}</li>
+      }
+    </ul>
+  </div>
+</section>
