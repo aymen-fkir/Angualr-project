@@ -5,14 +5,14 @@
     
     <!-- Two-way data binding demonstration -->
     <div class="inputs-row">
-      <input type="text" [(ngModel)]="friendSearchName" />
-      <input type="text" [(ngModel)]="friendSearchName" />
-      <input type="text" [(ngModel)]="friendSearchName" />
+      <input type="text" [(ngModel)]="friendSearchName.id" />
+      <input type="text" [(ngModel)]="friendSearchName.name" />
+      <input type="text" [(ngModel)]="friendSearchName.lastname" />
     </div>
 
     <ul>
       @for (friend of friends; track friend) {
-        <li>{{ friend }}</li>
+        <li>{{ friend.name }} {{ friend.lastname }}</li>
       }
     </ul>
   </div>

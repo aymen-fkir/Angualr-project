@@ -62,13 +62,18 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "poll": 1000
+          },
+
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "gestion_des_conference:build:production"
             },
             "development": {
-              "buildTarget": "gestion_des_conference:build:development"
+              "buildTarget": "gestion_des_conference:build:development",
+              "hmr": false
             }
           },
           "defaultConfiguration": "development"

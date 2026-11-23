@@ -1,0 +1,54 @@
+<section class="section-card conf-section" style="--accent: #0f766e; --accent-soft: #e0f7f5">
+  <div class="section-body">
+    <div class="conf-header">
+      <div class="section-icon">📅</div>
+      <div>
+        <h2>Liste des conférences à venir</h2>
+        <p class="hint">Cliquez sur une conférence pour afficher ses détails.</p>
+      </div>
+    </div>
+
+    <!-- Aucune conférence enregistrée -->
+   
+      <p class="empty">Aucune conférence n'est enregistrée pour le moment.</p>
+  
+      <!-- Two-way data binding : la saisie met à jour searchTerm et la liste se filtre -->
+      <input
+        class="search"
+        type="text"
+        placeholder="Taper le titre de la conférence"
+       
+      />
+    
+      <div class="grid">
+        @for (conference of conferences; track conference) {
+             <!-- Pipe uppercase : affichage en majuscules sans modifier la donnée -->
+            @if (conference.date >= today) {
+                <article class="conf-card" >
+                    <h3>{{ conference.title | uppercase }}</h3>
+
+                    <!-- Pipe date : formatage de la date -->
+                    <p><strong>Date</strong> {{ conference.date | date }}</p>
+                    <p><strong>Lieu :</strong> {{ conference.place }}</p>
+                    <p><strong>Places restantes :</strong> {{ conference.maxParticipants - conference.nbParticipants }}</p>
+
+                
+                    <p class="details"></p>
+                    <p class="details">Participants : </p>
+                
+                
+                    <button
+                    class="btn" [ngClass]="{'btn-available': conference.maxParticipants - conference.nbParticipants > 10, 
+                    'btn-limited': conference.maxParticipants - conference.nbParticipants <= 10 && conference.maxParticipants - conference.nbParticipants > 0, 
+                    'btn-full': conference.maxParticipants - conference.nbParticipants === 0}">
+                    S'inscrire
+                    </button>
+                </article>
+                <app-conferencedetails [confdetails]="conference"></app-conferencedetails>
+            }
+
+        }
+           
+    </div>
+  </div>
+</section>
